@@ -1,5 +1,7 @@
 # Gaze Correction Camera
 
+MacOs Application Preview ([🔗 Download](https://drive.google.com/file/d/1E47OZ66YPab1QuTbxN97hL2u3GYwyUbz/view?usp=drive_link))
+
 ## Overview
 
 This project implements a gaze correction system for video communication that uses computer vision and deep learning techniques to adjust eye gaze direction in real-time, providing a more natural eye contact experience during video calls. ([study more](./docs/orignal_doc.md))
