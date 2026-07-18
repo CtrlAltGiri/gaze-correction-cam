@@ -55,6 +55,39 @@ Press `c` to open the calibration panel and fine-tune the correction for your se
 
 ---
 
+## Apple Silicon (M1–M4) Quickstart — Python + Virtual Camera
+
+The prebuilt GazeAt app currently has known issues on Apple Silicon M4 (see issues #8/#9).
+Running from source with the OBS virtual camera bridge works on any Apple Silicon Mac:
+
+1. Install prerequisites:
+
+   ```bash
+   brew install pkg-config cmake obs
+   poetry install
+   ```
+
+2. Register the OBS virtual camera device (one time): open OBS Studio, click
+   **Start Virtual Camera** (grant the system extension permission), then quit OBS.
+
+3. Download the model weights (see below) and place them in `lm_feat/`, `weights/`, and `models/`.
+
+4. Run the virtual camera:
+
+   ```bash
+   poetry run python bin_virtual_cam.py --preview
+   ```
+
+5. In Zoom / Meet / Teams / FaceTime, select **OBS Virtual Camera** as your camera.
+
+To sanity-check the pipeline without a camera, run it against a portrait photo:
+
+```bash
+poetry run python scripts/offline_test.py path/to/portrait.jpg out/
+```
+
+---
+
 ## Advanced: Build from Source / Python CLI
 
 If you want to run from source or use the Python CLI directly:

@@ -1,11 +1,9 @@
-# Heavy data: stored on the cloud for efficient development
-weights/
+__pycache__/
+*.pyc
+.venv/
 lm_feat/
+weights/
 models/
-lm_feat.zip
-weights.zip
-
-**/__pycache__/
-
-# User settings database
 user_settings.db
+test_out/
+out/

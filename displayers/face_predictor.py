@@ -352,7 +352,8 @@ class MediaPipeFacePredictor(FacePredictor):
         from time import time
 
         h, w = bgr_frame.shape[:2]
-        mp_image = self._mp.Image(image_format=self._mp.ImageFormat.SRGB, data=bgr_frame)
+        rgb_frame = np.ascontiguousarray(cv2.cvtColor(bgr_frame, cv2.COLOR_BGR2RGB))
+        mp_image = self._mp.Image(image_format=self._mp.ImageFormat.SRGB, data=rgb_frame)
         timestamp_ms = int((time() - self._start_time) * 1000)
         result = self.landmarker.detect_for_video(mp_image, timestamp_ms)
 
